@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - SaveFood: Expiry Tracker</title>
+  <title>SaveFood: Expiry Tracker</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #f8f9fa; padding: 20px; }
@@ -15,72 +15,155 @@
     .date { font-size: 14px; color: #6c757d; margin-bottom: 24px; }
     a { color: #2D6A4F; }
     .footer { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e9ecef; font-size: 13px; color: #6c757d; }
+    .tabs { display: flex; gap: 0; margin-bottom: 32px; border-bottom: 2px solid #e9ecef; }
+    .tab { padding: 12px 24px; font-size: 16px; font-weight: 600; color: #6c757d; cursor: pointer; border-bottom: 3px solid transparent; margin-bottom: -2px; text-decoration: none; }
+    .tab.active { color: #2D6A4F; border-bottom-color: #2D6A4F; }
+    .tab:hover { color: #2D6A4F; }
+    .section { display: none; }
+    .section.active { display: block; }
+    .card { background: #f8f9fa; border-radius: 12px; padding: 20px; margin-bottom: 16px; }
+    .card h3 { font-size: 16px; color: #2D6A4F; margin-bottom: 8px; }
+    .hero { text-align: center; padding: 20px 0 30px; }
+    .hero p { color: #6c757d; font-size: 16px; }
+    .contact-box { background: #2D6A4F; color: #fff; border-radius: 12px; padding: 24px; text-align: center; margin: 24px 0; }
+    .contact-box a { color: #fff; font-size: 18px; font-weight: 600; }
+    .contact-box p { color: rgba(255,255,255,0.85); }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Privacy Policy</h1>
-    <p class="date">Effective Date: March 27, 2026</p>
-    <p>SaveFood: Expiry Tracker ("SaveFood", "we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
+    <div class="tabs">
+      <a class="tab active" href="#privacy" onclick="showTab('privacy')">Privacy Policy</a>
+      <a class="tab" href="#support" onclick="showTab('support')">Support</a>
+    </div>
 
-    <h2>1. Information We Collect</h2>
-    <p><strong>Account Information:</strong> When you create an account, we collect your name, email address, and username. This information is stored securely using Firebase Authentication and Firebase Firestore.</p>
-    <p><strong>Food Inventory Data:</strong> Information about food items you add to the app, including item names, categories, quantities, storage locations, purchase dates, and expiry dates. This data is stored locally on your device using Hive database.</p>
-    <p><strong>Camera and Photos:</strong> When you use our scanning features, the app accesses your camera to photograph receipts, food packages, or fridge contents. Photos taken for scanning are processed and are not stored permanently. Receipt text is extracted on-device using Google ML Kit before being sent to our AI service for analysis.</p>
-    <p><strong>Subscription Data:</strong> If you subscribe to Premium, Apple handles all payment processing. We store your subscription status (active/inactive) and plan type in our database to provide Premium features. We do not have access to your payment details, credit card number, or Apple ID password.</p>
+    <!-- ==================== PRIVACY POLICY ==================== -->
+    <div id="privacy" class="section active">
+      <h1>Privacy Policy</h1>
+      <p class="date">Effective Date: March 27, 2026</p>
+      <p>SaveFood: Expiry Tracker ("SaveFood", "we", "our", or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our mobile application.</p>
 
-    <h2>2. How We Use Your Information</h2>
-    <ul>
-      <li>To provide and maintain the app's core functionality (expiry tracking, recipe suggestions, shopping lists)</li>
-      <li>To process scanned receipts and food images using AI-powered analysis</li>
-      <li>To send expiry notification reminders for your food items</li>
-      <li>To manage your Premium subscription status</li>
-      <li>To improve the app experience and fix technical issues</li>
-    </ul>
+      <h2>1. Information We Collect</h2>
+      <p><strong>Account Information:</strong> When you create an account, we collect your name, email address, and username. This information is stored securely using Firebase Authentication and Firebase Firestore.</p>
+      <p><strong>Food Inventory Data:</strong> Information about food items you add to the app, including item names, categories, quantities, storage locations, purchase dates, and expiry dates. This data is stored locally on your device using Hive database.</p>
+      <p><strong>Camera and Photos:</strong> When you use our scanning features, the app accesses your camera to photograph receipts, food packages, or fridge contents. Photos taken for scanning are processed and are not stored permanently. Receipt text is extracted on-device using Google ML Kit before being sent to our AI service for analysis.</p>
+      <p><strong>Subscription Data:</strong> If you subscribe to Premium, Apple handles all payment processing. We store your subscription status (active/inactive) and plan type in our database to provide Premium features. We do not have access to your payment details, credit card number, or Apple ID password.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We use the following third-party services:</p>
-    <ul>
-      <li><strong>Firebase (Google):</strong> For user authentication and storing user profile data. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
-      <li><strong>OpenAI:</strong> For AI-powered receipt and food image analysis. When you scan a receipt or food photo, the extracted text or image is sent to OpenAI's API for processing. <a href="https://openai.com/privacy" target="_blank">OpenAI Privacy Policy</a></li>
-      <li><strong>Open Food Facts:</strong> For barcode product lookup. When you scan a barcode, the barcode number is sent to Open Food Facts' public database. <a href="https://world.openfoodfacts.org/privacy" target="_blank">Open Food Facts Privacy Policy</a></li>
-      <li><strong>Google ML Kit:</strong> For on-device text recognition from receipt photos. This processing happens entirely on your device and no data is sent to Google's servers.</li>
-      <li><strong>Apple App Store:</strong> For processing subscription payments. All payment information is handled by Apple. <a href="https://www.apple.com/privacy/" target="_blank">Apple Privacy Policy</a></li>
-    </ul>
+      <h2>2. How We Use Your Information</h2>
+      <ul>
+        <li>To provide and maintain the app's core functionality (expiry tracking, recipe suggestions, shopping lists)</li>
+        <li>To process scanned receipts and food images using AI-powered analysis</li>
+        <li>To send expiry notification reminders for your food items</li>
+        <li>To manage your Premium subscription status</li>
+        <li>To improve the app experience and fix technical issues</li>
+      </ul>
 
-    <h2>4. Data Storage and Security</h2>
-    <p>Your food inventory data is stored locally on your device. User profile and subscription data is stored in Firebase Firestore with industry-standard security measures. We use secure HTTPS connections for all data transfers.</p>
-    <p>We do not sell, trade, or rent your personal information to third parties.</p>
+      <h2>3. Third-Party Services</h2>
+      <p>We use the following third-party services:</p>
+      <ul>
+        <li><strong>Firebase (Google):</strong> For user authentication and storing user profile data. <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy</a></li>
+        <li><strong>OpenAI:</strong> For AI-powered receipt and food image analysis. When you scan a receipt or food photo, the extracted text or image is sent to OpenAI's API for processing. <a href="https://openai.com/privacy" target="_blank">OpenAI Privacy Policy</a></li>
+        <li><strong>Open Food Facts:</strong> For barcode product lookup. When you scan a barcode, the barcode number is sent to Open Food Facts' public database. <a href="https://world.openfoodfacts.org/privacy" target="_blank">Open Food Facts Privacy Policy</a></li>
+        <li><strong>Google ML Kit:</strong> For on-device text recognition from receipt photos. This processing happens entirely on your device and no data is sent to Google's servers.</li>
+        <li><strong>Apple App Store:</strong> For processing subscription payments. All payment information is handled by Apple. <a href="https://www.apple.com/privacy/" target="_blank">Apple Privacy Policy</a></li>
+      </ul>
 
-    <h2>5. Data Retention</h2>
-    <p>Your data is retained as long as your account is active. You can delete your food items at any time within the app. If you wish to delete your account and all associated data, please contact us at the email address below.</p>
+      <h2>4. Data Storage and Security</h2>
+      <p>Your food inventory data is stored locally on your device. User profile and subscription data is stored in Firebase Firestore with industry-standard security measures. We use secure HTTPS connections for all data transfers.</p>
+      <p>We do not sell, trade, or rent your personal information to third parties.</p>
 
-    <h2>6. Children's Privacy</h2>
-    <p>SaveFood is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it promptly.</p>
+      <h2>5. Data Retention</h2>
+      <p>Your data is retained as long as your account is active. You can delete your food items at any time within the app. If you wish to delete your account and all associated data, please contact us at the email address below.</p>
 
-    <h2>7. Your Rights</h2>
-    <p>You have the right to:</p>
-    <ul>
-      <li>Access the personal data we hold about you</li>
-      <li>Request correction of inaccurate data</li>
-      <li>Request deletion of your data</li>
-      <li>Withdraw consent for data processing</li>
-    </ul>
+      <h2>6. Children's Privacy</h2>
+      <p>SaveFood is not directed to children under the age of 13. We do not knowingly collect personal information from children under 13. If we discover that a child under 13 has provided us with personal information, we will delete it promptly.</p>
 
-    <h2>8. Notifications</h2>
-    <p>With your permission, we send local push notifications to remind you about food items approaching their expiry dates. You can enable or disable notifications at any time through your device settings or within the app.</p>
+      <h2>7. Your Rights</h2>
+      <p>You have the right to:</p>
+      <ul>
+        <li>Access the personal data we hold about you</li>
+        <li>Request correction of inaccurate data</li>
+        <li>Request deletion of your data</li>
+        <li>Withdraw consent for data processing</li>
+      </ul>
 
-    <h2>9. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Effective Date" above.</p>
+      <h2>8. Notifications</h2>
+      <p>With your permission, we send local push notifications to remind you about food items approaching their expiry dates. You can enable or disable notifications at any time through your device settings or within the app.</p>
 
-    <h2>10. Contact Us</h2>
-    <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
-    <p><strong>Email:</strong> savefoodapp.info@gmail.com</p>
+      <h2>9. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the app and updating the "Effective Date" above.</p>
+
+      <h2>10. Contact Us</h2>
+      <p>If you have any questions about this Privacy Policy or our data practices, please contact us at:</p>
+      <p><strong>Email:</strong> <a href="mailto:savefoodapp.info@gmail.com">savefoodapp.info@gmail.com</a></p>
+    </div>
+
+    <!-- ==================== SUPPORT ==================== -->
+    <div id="support" class="section">
+      <div class="hero">
+        <h1>Support</h1>
+        <p>We're here to help you get the most out of SaveFood: Expiry Tracker</p>
+      </div>
+
+      <div class="contact-box">
+        <p>Need help? Contact us directly:</p>
+        <a href="mailto:savefoodapp.info@gmail.com">savefoodapp.info@gmail.com</a>
+        <p style="margin-top: 8px; margin-bottom: 0;">You can also contact us from within the app: Settings &gt; Contact Us</p>
+      </div>
+
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="card">
+        <h3>How do I add food items?</h3>
+        <p>Tap the "+" button on the Pantry screen to add items manually. You can also use the camera icon to scan receipts, barcodes, or photograph your fridge contents for automatic item detection.</p>
+      </div>
+
+      <div class="card">
+        <h3>How does AI scanning work?</h3>
+        <p>Point your camera at a grocery receipt, food package barcode, or your fridge/cart contents. Our AI analyzes the image and automatically identifies food items with their categories and estimated expiry dates. Guest users get 5 free AI scans, registered users get 10, and Premium users get 100 scans.</p>
+      </div>
+
+      <div class="card">
+        <h3>How do expiry notifications work?</h3>
+        <p>SaveFood sends you reminders 2 days before, 1 day before, and on the day a food item expires. Make sure notifications are enabled in your device Settings for SaveFood.</p>
+      </div>
+
+      <div class="card">
+        <h3>How do I manage or cancel my subscription?</h3>
+        <p>Go to your iPhone Settings &gt; tap your name (Apple ID) &gt; Subscriptions &gt; SaveFood. From there you can change your plan or cancel. You can also manage subscriptions from within the app under Profile &gt; Manage Subscription.</p>
+      </div>
+
+      <div class="card">
+        <h3>How do I restore my Premium subscription?</h3>
+        <p>If you reinstalled the app or switched devices, go to Profile &gt; Manage Subscription &gt; Restore Purchases. This will restore your active subscription from the App Store.</p>
+      </div>
+
+      <div class="card">
+        <h3>Is my data private?</h3>
+        <p>Yes. Your food inventory is stored locally on your device. Receipt text is extracted on-device before analysis. We do not sell your data. Read our full <a href="#privacy" onclick="showTab('privacy')">Privacy Policy</a> for details.</p>
+      </div>
+
+      <div class="card">
+        <h3>How do I delete my account?</h3>
+        <p>To delete your account and all associated data, please email us at <a href="mailto:savefoodapp.info@gmail.com">savefoodapp.info@gmail.com</a> with the subject "Account Deletion Request".</p>
+      </div>
+    </div>
 
     <div class="footer">
       <p>SaveFood: Expiry Tracker &copy; 2026. All rights reserved.</p>
       <p>Terms of Use (EULA): <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank">Apple Standard License Agreement</a></p>
     </div>
   </div>
+
+  <script>
+    function showTab(tab) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+      document.querySelector('.tab[href="#' + tab + '"]').classList.add('active');
+    }
+    // Auto-show support tab if URL has #support
+    if (window.location.hash === '#support') showTab('support');
+  </script>
 </body>
 </html>
